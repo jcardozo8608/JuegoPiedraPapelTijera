@@ -1,0 +1,310 @@
+/* ==========================================================================
+   1. IMPORTACIÓN DE FUENTES FUTURISTAS
+   ========================================================================== */
+@import url('https://googleapis.com');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Rajdhani', sans-serif;
+}
+
+body {
+    /* Fondo oscuro cibernético profundo con luces de fondo */
+    background: radial-gradient(circle at 50% 30%, #101432 0%, #08091a 70%, #030308 100%);
+    color: #ffffff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow-x: hidden;
+}
+
+/* ==========================================================================
+   2. ENCABEZADO TECH (HEADER)
+   ========================================================================== */
+header {
+    padding: 30px 20px;
+    text-align: center;
+}
+
+header h1 {
+    font-family: 'Orbitron', sans-serif;
+    color: #00f3ff;
+    font-size: 38px;
+    font-weight: 900;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    /* Resplandor de Neón Cian */
+    text-shadow: 0 0 10px rgba(0, 243, 255, 0.6), 
+                 0 0 20px rgba(0, 243, 255, 0.3), 
+                 0 0 40px rgba(0, 243, 255, 0.1);
+    margin-bottom: 8px;
+}
+
+header p {
+    color: #5f7597;
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* ==========================================================================
+   3. CONTENEDOR DE INTERFAZ DE USUARIO (HUD GAMER)
+   ========================================================================== */
+.contenedor {
+    width: 92%;
+    max-width: 900px;
+    margin: 10px auto;
+    background: rgba(10, 14, 38, 0.75);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    padding: 35px;
+    border-radius: 16px;
+    /* Marcos y bordes con estilo de pantalla holográfica */
+    border: 2px solid #1a2254;
+    box-shadow: 0 0 35px rgba(0, 0, 0, 0.8), 
+                inset 0 0 20px rgba(0, 243, 255, 0.05);
+    position: relative;
+}
+
+/* Detalles decorativos en las esquinas imitando interfaces de ciencia ficción */
+.contenedor::before {
+    content: '';
+    position: absolute;
+    top: -2px; left: -2px; width: 20px; height: 20px;
+    border-top: 3px solid #00f3ff; border-left: 3px solid #00f3ff;
+}
+.contenedor::after {
+    content: '';
+    position: absolute;
+    bottom: -2px; right: -2px; width: 20px; height: 20px;
+    border-bottom: 3px solid #ff0055; border-right: 3px solid #ff0055;
+}
+
+.pantalla h2 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 22px;
+    margin-bottom: 25px;
+    color: #00f3ff;
+    letter-spacing: 3px;
+    text-shadow: 0 0 8px rgba(0, 243, 255, 0.4);
+}
+
+.pantalla p {
+    font-size: 18px;
+    color: #8fa0be;
+    letter-spacing: 1px;
+}
+
+/* ==========================================================================
+   4. VIDEO DE BIENVENIDA (PANTALLA DE RADAR)
+   ========================================================================== */
+.video {
+    width: 100%;
+    max-height: 280px;
+    border-radius: 12px;
+    margin-bottom: 25px;
+    background: #050714;
+    border: 2px solid #00f3ff;
+    box-shadow: 0 0 20px rgba(0, 243, 255, 0.25);
+    object-fit: cover;
+}
+
+/* ==========================================================================
+   5. BOTONES DE COMANDO ELECTRÓNICOS
+   ========================================================================== */
+button {
+    display: block;
+    width: 100%;
+    max-width: 450px;
+    margin: 18px auto;
+    padding: 16px 20px;
+    border: 1px solid #00f3ff;
+    border-radius: 8px;
+    background: linear-gradient(180deg, rgba(0, 243, 255, 0.15) 0%, rgba(0, 110, 255, 0.05) 100%);
+    color: #00f3ff;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(0, 243, 255, 0.1);
+    transition: all 0.25s ease-in-out;
+    text-transform: uppercase;
+}
+
+button:hover {
+    background: #00f3ff;
+    color: #050714;
+    transform: scale(1.02);
+    box-shadow: 0 0 25px rgba(0, 243, 255, 0.6);
+}
+
+.sonido {
+    border-color: #ff9d00;
+    color: #ff9d00;
+    background: linear-gradient(180deg, rgba(255, 157, 0, 0.15) 0%, rgba(255, 100, 0, 0.05) 100%);
+}
+
+.sonido:hover {
+    background: #ff9d00;
+    color: #050714;
+    box-shadow: 0 0 25px rgba(255, 157, 0, 0.6);
+}
+
+.volver {
+    border-color: #ff0055;
+    color: #ff0055;
+    background: linear-gradient(180deg, rgba(255, 0, 85, 0.15) 0%, rgba(150, 0, 50, 0.05) 100%);
+}
+
+.volver:hover {
+    background: #ff0055;
+    color: #ffffff;
+    box-shadow: 0 0 25px rgba(255, 0, 85, 0.6);
+}
+
+.opciones button {
+    display: inline-block;
+    width: auto;
+    min-width: 160px;
+    margin: 10px 8px;
+}
+
+/* ==========================================================================
+   6. ARENA DE COMBATE (BATTLEGROUND)
+   ========================================================================== */
+.jugadores {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 15px;
+    margin: 30px 0;
+}
+
+.jugador {
+    flex: 1;
+    padding: 20px;
+    background: rgba(16, 22, 58, 0.6);
+    border-radius: 12px;
+    border: 1px solid #202b6d;
+    box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.5);
+}
+
+.jugador h3 {
+    font-size: 18px;
+    color: #a0aec0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Efecto de holograma flotante en los Emojis */
+.simbolo {
+    font-size: 70px;
+    margin-top: 15px;
+    filter: drop-shadow(0 0 15px rgba(0, 243, 255, 0.4));
+    animation: escanearHolograma 2.5s ease-in-out infinite alternate;
+}
+
+@keyframes escanearHolograma {
+    0% {
+        transform: translateY(0px) scale(1);
+        filter: drop-shadow(0 0 10px rgba(0, 243, 255, 0.3)) opacity(0.8);
+    }
+    100% {
+        transform: translateY(-10px) scale(1.04);
+        filter: drop-shadow(0 0 25px rgba(0, 243, 255, 0.6)) opacity(1);
+    }
+}
+
+.versus {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 32px;
+    color: #ff0055;
+    font-weight: 900;
+    text-shadow: 0 0 15px rgba(255, 0, 85, 0.6);
+    animation: parpadeoAlerta 1.5s infinite alternate;
+}
+
+@keyframes parpadeoAlerta {
+    0% { opacity: 0.6; }
+    100% { opacity: 1; }
+}
+
+#resultado {
+    font-family: 'Orbitron', sans-serif;
+    color: #ff9d00;
+    font-size: 26px;
+    font-weight: 700;
+    margin: 25px 0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 0 0 12px rgba(255, 157, 0, 0.5);
+}
+
+/* ==========================================================================
+   7. PANEL DE CONTROL DE DATOS (MARCADOR DE SCORE)
+   ========================================================================== */
+.marcador {
+    margin: 30px 0 15px 0;
+    padding: 20px;
+    border-radius: 12px;
+    background: rgba(6, 8, 24, 0.9);
+    border: 1px solid #1a2254;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
+
+.marcador h3 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 13px;
+    letter-spacing: 3px;
+    color: #5f7597;
+    margin-bottom: 8px;
+}
+
+#marcador {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    color: #00f3ff;
+    letter-spacing: 1px;
+}
+
+.oculto {
+    display: none !important;
+}
+
+footer {
+    padding: 20px;
+    color: #43536c;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* ==========================================================================
+   8. ADAPTABILIDAD PARA MÓVILES (RESPONSIVE)
+   ========================================================================== */
+@media (max-width: 650px) {
+    header h1 { font-size: 26px; }
+    .contenedor { padding: 20px 15px; }
+    
+    .jugadores {
+        flex-direction: column;
+        gap: 15px;
+    }
+    .jugador { width: 100%; }
+    .simbolo { font-size: 55px; }
+    .versus { margin: 5px 0; font-size: 24px; }
+    
+    .opciones button {
+        display: block;
+        width: 100%;
+        max-width: 100%;
+        margin: 12px 0;
+    }
+    #resultado { font-size: 20px; }
+}

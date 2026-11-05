@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Piedra, Papel o Tijera</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>✊ PIEDRA, PAPEL O TIJERA ✂️</h1>
+        <p>¡Demuestra quién es el mejor!</p>
+    </header>
+
+    <main class="contenedor">
+
+        <!-- MENU PRINCIPAL -->
+        <section id="menu" class="pantalla">
+
+            <h2>MENÚ PRINCIPAL</h2>
+
+            <!-- Se agregó 'playsinline' para forzar la reproducción en todos los navegadores modernos y móviles -->
+            <video class="video" autoplay muted loop playsinline controls>
+                <source src="assets/bienvenida.mp4" type="video/mp4">
+                Tu navegador no puede reproducir este video.
+            </video>
+
+            <p>Selecciona una modalidad para comenzar:</p>
+
+            <button onclick="iniciarJuego(1)">
+                OPCIÓN 1 - PC VS USUARIO
+            </button>
+
+            <button onclick="iniciarJuego(2)">
+                OPCIÓN 2 - PC VS USUARIO ALEATORIO
+            </button>
+
+            <button onclick="iniciarJuego(3)">
+                OPCIÓN 3 - USUARIO 1 VS USUARIO 2
+            </button>
+
+            <button class="sonido" onclick="activarMusica()">
+                🔊 ACTIVAR / PAUSAR MÚSICA
+            </button>
+
+        </section>
+
+        <!-- PANTALLA DEL JUEGO -->
+        <section id="juego" class="pantalla oculto">
+
+            <h2 id="tituloJuego"></h2>
+
+            <p id="instruccion">Selecciona tu jugada</p>
+
+            <div class="jugadores">
+
+                <div class="jugador">
+                    <h3 id="nombreJugador">Jugador 1</h3>
+                    <div id="jugadaJugador" class="simbolo">❔</div>
+                </div>
+
+                <div class="versus">VS</div>
+
+                <div class="jugador">
+                    <h3 id="nombrePC">Computadora</h3>
+                    <div id="jugadaPC" class="simbolo">❔</div>
+                </div>
+
+            </div>
+
+            <h2 id="resultado">¡Que comience el juego!</h2>
+
+            <div class="opciones">
+
+                <button onclick="jugar('piedra')">
+                    ✊ PIEDRA
+                </button>
+
+                <button onclick="jugar('papel')">
+                    ✋ PAPEL
+                </button>
+
+                <button onclick="jugar('tijera')">
+                    ✌️ TIJERA
+                </button>
+
+            </div>
+
+            <div class="marcador">
+                <h3>MARCADOR</h3>
+                <p id="marcador">Jugador 1: 0 | Computadora: 0 | Empates: 0</p>
+            </div>
+
+            <button onclick="reiniciarMarcador()">REINICIAR PARTIDA</button>
+
+            <button class="volver" onclick="volverMenu()">VOLVER AL MENÚ</button>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Juego desarrollado con HTML, CSS y JavaScript</p>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

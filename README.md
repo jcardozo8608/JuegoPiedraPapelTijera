@@ -4,7 +4,7 @@
 
 ## 🚀 Enlace del Juego en Vivo
 Puedes probar el juego corriendo en tiempo real aquí:
-👉 **[Jugar en GitHub Pages](https://github.io)**
+👉 **[Jugar en GitHub Pages]([https://github.io](https://jcardozo8608.github.io/JuegoPiedraPapelTijera/)**
 
 ---
 
